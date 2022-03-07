@@ -228,7 +228,7 @@ a {
   z-index: -1;
   top: 0;
   left: 0;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.38)), url('../assets/kubiki.jpg') no-repeat center;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.38)), url('../assets/bg.jpg') no-repeat center;
   background-size: cover;
 }
 

@@ -20,7 +20,10 @@
     <div class="header__container">
       <nav class="header__nav">
         <div class="header__link-wrapper">
-          <a href="#" class="header__link">Главная</a>
+          <a href="./index.html" class="header__link">Главная</a>
+        </div>
+        <div class="header__link-wrapper">
+          <a href="#our-work" class="header__link">Примеры работ</a>
         </div>
         <div class="header__link-wrapper">
           <div class="header__link header__link_dropdown">
@@ -28,20 +31,17 @@
             <div class="header__dropdown-wrapper">
               <ul class="header__dropdown-list">
                 <li class="header__dropdown-list-item">
-                  <a href="" class="header__dropdown-link">Цены</a>
+                  <a href="#pricing" class="header__dropdown-link">Цены</a>
                 </li>
                 <li class="header__dropdown-list-item">
-                  <a href="" class="header__dropdown-link">SEO</a>
+                  <a href="#seo" class="header__dropdown-link">SEO</a>
                 </li>
                 <li class="header__dropdown-list-item">
-                  <a href="" class="header__dropdown-link">О нас</a>
+                  <a href="#about-us" class="header__dropdown-link">О нас</a>
                 </li>
               </ul>
             </div>
           </div>
-        </div>
-        <div class="header__link-wrapper">
-          <a href="#" class="header__link">Примеры работ</a>
         </div>
       </nav>
 
@@ -58,15 +58,19 @@
           <span class="header__contact-phone-text">Работаем по всей России</span>
         </div>
         <button type="button" class="header__contact-button">Заказать звонок</button>
+        <form class="header__contact-button-wrapper">
+          <input type="phone" id="header-phone" name="header-phone" class="header__contact-phone-input">
+          <button type="submit" class="header__contact-phone-submit"></button>
+        </form>
       </div>
     </div>
   </header>
 
   <section class="section section_slider reverse-bg">
     <div class="slider">
-      <div class="slide">
+      <div class="slide active">
         <div class="slide__left">
-          <img src="./assets/kirill.png" alt="Kirill" class="slider__image" style="left: 50px; z-index: 0">
+          <img src="./assets/kirill.png" alt="Kirill" class="slider__image">
         </div>
         <div class="slide__right">
           <div class="slider__text">
@@ -82,12 +86,32 @@
           </div>
         </div>
       </div>
+
+      <div class="slide">
+        <div class="slide__left">
+          <div class="slider__text">
+            <p class="slider__paragraph">
+              Привет!
+            </p>
+            <p class="slider__paragraph">
+              Меня зовут <span class="accent-color">ПАВЕЛ</span><br>я - web-разработчик.
+            </p>
+            <p class="slider__paragraph">
+              <span class="accent-color">Моя задача</span> - оживить дизайн<br>твоего сайта!
+            </p>
+          </div>
+        </div>
+        <div class="slide__right">
+          <img src="./assets/Pavel.png" alt="Kirill" class="slider__image" style="margin-bottom: -4px;">
+        </div>
+      </div>
+
       <div class="arrow arrow_left"></div>
       <div class="arrow arrow_right"></div>
     </div>
   </section>
 
-  <section class="section section_our-work">
+  <section class="section section_our-work" id="our-work">
     <h2 class="section__title">Это сделали <span class="accent-color">мы</span></h2>
     <div class="our-work">
       <div class="our-work__left-side">
@@ -108,10 +132,11 @@
         </div>
       </div>
     </div>
-    <a href="#" class="page-link">Еще примеры</a>
+
+    <a href="./examples.html" class="page-link">Еще примеры</a>
   </section>
 
-  <section class="section section_pricing reverse-bg">
+  <section class="section section_pricing reverse-bg" id="pricing">
     <div class="pricing__wrapper">
       <div class="pricing__card">
         <h3 class="pricing__card-name">Лендинг</h3>
@@ -134,13 +159,13 @@
     </div>
   </section>
 
-  <section class="section section_seo">
+  <section class="section section_seo" id="seo">
     <div class="seo">
       <div class="seo__image-wrapper">
         <img src="./assets/moon.png" alt="Moon" class="seo__moon-image">
       </div>
       <div class="seo__text">
-        <h2 class="seo__title"><span class="accent-color" style="font-weight: 700;">S</span>EO - продвижение</h2>
+        <h2 class="seo__title"><span class="accent-color">S</span>EO - продвижение</h2>
         <p class="seo__info">SEO (Search Engine Optimization — оптимизация под поисковые системы) — комплекс методов, позволяющих поднять сайт в выдаче поисковых систем как можно выше.</p>
         <img src="./assets/seo.png" alt="seo image" class="seo__seo-image">
       </div>
@@ -174,6 +199,46 @@
     </div>
   </section>
 
+  <section class="section section_about-us reverse-bg" id="about-us">
+    <div class="about-us__main">
+      <div class="about-us">
+        <h2 class="about-us__title">Почему <span class="accent-color">выбирают</span> нас?</h2>
+        <div class="about-us__fragment">
+          <h3 class="about-us__fragment-title">Мы <span class="accent-color">любим</span> своих клиентов</h3>
+          <p class="about-us__fragment-text">Предоставляем не только высокие <span class="accent-color">результаты</span>, но и клиентоориентированный сервис</p>
+        </div>
+        <div class="about-us__fragment">
+          <h3 class="about-us__fragment-title">Повышение <span class="accent-color">продаж</span></h3>
+          <p class="about-us__fragment-text">Это основная <span class="accent-color">философия</span> нашей компании. Мы верим, что продвижение должно  помогать увеличить продажи. Мы разрабатываем индивидуальные стратегии продвижения, анализируем статистику и поведения пользователей на сайте</p>
+        </div>
+        <div class="about-us__fragment">
+          <h3 class="about-us__fragment-title"><span class="accent-color">Прозрачность</span> работы</h3>
+          <p class="about-us__fragment-text">Любой наш клиент может запросить данные по проводящимся работам. <span class="accent-color">Доверие</span> - залог прлодотворного сотрудничества и высоких результатов в работе. И мы используем прозрачность наших работ в качестве конкурентного преимущества</p>
+        </div>
+      </div>
+
+      <div class="about-us__form">
+        <h2 class="about-us__title">Оставить <span class="accent-color">заявку</span></h2>
+        <form class="about-us__form-main">
+          <div class="about-us__form-wrapper">
+            <input placeholder="Имя" type="text" name="name" class="about-us__form-input name" />
+            <label for="" class="about-us__form-dropdown-label" >
+              <input placeholder="Тип сайта" type="text" class="about-us__form-input type-of-site" disabled>
+            </label>
+            <input placeholder="E-mail" type="email" name="email" class="about-us__form-input email" />
+            <input placeholder="Телефон" type="phone" name="phone" class="about-us__form-input email" />
+          </div>
+          
+          <button type="submit" class="about-us__form-submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+    <div class="about-us__free-photo">
+      <p class="about-us__free-photo-text">Бесплатная профессиональная фотосессия для вашего сайта!</p>
+      <p class="about-us__free-photo-subtext">*При комплексной покупке сайта и seo-продвижения</p>
+    </div>
+  </section>
+
   <footer class="footer">
     <div class="footer__container">
       <div class="logo-wrapper">
@@ -197,9 +262,11 @@
         </a>
       </div>
       <nav class="footer__nav">
-        <a href="#" class="footer__nav-link">Главная</a>
-        <a href="#" class="footer__nav-link">Услуги</a>
-        <a href="#" class="footer__nav-link">Примеры работ</a>
+        <a href="./index.html" class="footer__nav-link">Главная</a>
+        <a href="#our-work" class="footer__nav-link">Примеры работ</a>
+        <a href="#pricing" class="footer__nav-link">Цены</a>
+        <a href="#seo" class="footer__nav-link">SEO</a>
+        <a href="#about-us" class="footer__nav-link">О нас</a>
       </nav>
       <p class="footer__copyrights">
         © 2022 Kane Digital group

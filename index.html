@@ -28,16 +28,16 @@
         <div class="header__link-wrapper">
           <div class="header__link header__link_dropdown">
             <span class="header__dropdown-text">Услуги</span>
-            <div class="header__dropdown-wrapper">
-              <ul class="header__dropdown-list">
-                <li class="header__dropdown-list-item">
-                  <a href="#pricing" class="header__dropdown-link">Цены</a>
+            <div class="dropdown-wrapper">
+              <ul class="dropdown-list">
+                <li class="dropdown-list-item">
+                  <a href="#pricing" class="dropdown-link">Цены</a>
                 </li>
-                <li class="header__dropdown-list-item">
-                  <a href="#seo" class="header__dropdown-link">SEO</a>
+                <li class="dropdown-list-item">
+                  <a href="#seo" class="dropdown-link">SEO</a>
                 </li>
-                <li class="header__dropdown-list-item">
-                  <a href="#about-us" class="header__dropdown-link">О нас</a>
+                <li class="dropdown-list-item">
+                  <a href="#about-us" class="dropdown-link">О нас</a>
                 </li>
               </ul>
             </div>
@@ -116,6 +116,20 @@
     <div class="our-work">
       <div class="our-work__left-side">
         <img src="./assets/komp.png" alt="Computer" class="our-work__computer-image">
+        <div class="our-work__slider-wrapper">
+          <div class="our-work__comp-slider">
+            <div class="our-work__comp-slide">
+              <img src="./assets/examples-slider/corporate/slide-1.jpg" alt="Slide image" class="our-work__comp-slider-image">
+            </div>
+
+            <div class="our-work__comp-slide">
+              <img src="./assets/examples-slider/online-store/slide-1.png" alt="Slide image" class="our-work__comp-slider-image">
+            </div>
+            <div class="our-work__comp-slide">
+              <img src="./assets/examples-slider/online-store/slide-2.jpg" alt="Slide image" class="our-work__comp-slider-image">
+            </div>
+          </div>
+        </div>
       </div>
       <div class="our-work__right-side">
         <div class="our-work__card">
@@ -222,8 +236,24 @@
         <form class="about-us__form-main">
           <div class="about-us__form-wrapper">
             <input placeholder="Имя" type="text" name="name" class="about-us__form-input name" />
-            <label for="" class="about-us__form-dropdown-label" >
-              <input placeholder="Тип сайта" type="text" class="about-us__form-input type-of-site" disabled>
+            <label class="about-us__form-dropdown-label">
+              <input placeholder="Тип сайта" type="text" class="about-us__form-input type-of-site" readonly>
+              <div class="dropdown-wrapper">
+                <ul class="dropdown-list">
+                  <li class="dropdown-list-item">
+                    <span class="dropdown-link">Лендинг</span>
+                  </li>
+                  <li class="dropdown-list-item">
+                    <span class="dropdown-link">Корпоративный</span>
+                  </li>
+                  <li class="dropdown-list-item">
+                    <span class="dropdown-link">Интернет-магазин</span>
+                  </li>
+                  <li class="dropdown-list-item">
+                    <span class="dropdown-link">Оптимизация</span>
+                  </li>
+                </ul>
+              </div>
             </label>
             <input placeholder="E-mail" type="email" name="email" class="about-us__form-input email" />
             <input placeholder="Телефон" type="phone" name="phone" class="about-us__form-input email" />

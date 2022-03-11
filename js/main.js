@@ -124,14 +124,14 @@ document.addEventListener('DOMContentLoaded', () => {
     arrowLeftSelector: '.arrow_left',
     arrowRightSelector: '.arrow_right',
     slideSpeed: 7000
-  })
+  });
 
   Slider({
     sliderSelector: '.site-slider',
     slideSelector: '.site-slider__slide',
     dotsSelector: 'site-slider__pagination-list-item',
     dotsListSelector: '.site-slider__pagination-list'
-  })
+  });
 
   Slider({
     sliderSelector: '.site-slider__slide:nth-of-type(1) .examples-slider',
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
     arrowsSelector: '.site-slider__slide:nth-of-type(1) .examples-slider .arrow',
     arrowLeftSelector: '.site-slider__slide:nth-of-type(1) .examples-slider .arrow_left',
     arrowRightSelector: '.site-slider__slide:nth-of-type(1) .examples-slider .arrow_right'
-  })
+  });
 
   Slider({
     sliderSelector: '.site-slider__slide:nth-of-type(2) .examples-slider',
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     arrowsSelector: '.site-slider__slide:nth-of-type(2) .examples-slider .arrow',
     arrowLeftSelector: '.site-slider__slide:nth-of-type(2) .examples-slider .arrow_left',
     arrowRightSelector: '.site-slider__slide:nth-of-type(2) .examples-slider .arrow_right'
-  })
+  });
 
   Slider({
     sliderSelector: '.site-slider__slide:nth-of-type(3) .examples-slider',
@@ -155,6 +155,51 @@ document.addEventListener('DOMContentLoaded', () => {
     arrowsSelector: '.site-slider__slide:nth-of-type(3) .examples-slider .arrow',
     arrowLeftSelector: '.site-slider__slide:nth-of-type(3) .examples-slider .arrow_left',
     arrowRightSelector: '.site-slider__slide:nth-of-type(3) .examples-slider .arrow_right'
-  })
+  });
+
+  Slider({
+    sliderSelector: '.our-work__comp-slider',
+    slideSelector: '.our-work__comp-slide',
+    slideSpeed: 5000
+  });
+
+  // Дропдаун в форме
+  (() => {
+    const dropdownLabel = document.querySelector('.about-us__form-dropdown-label');
+    const dropdownInput = dropdownLabel.querySelector('.about-us__form-input.type-of-site');
+    const dropdown = dropdownLabel.querySelector('.dropdown-wrapper');
+
+    function hideDropdown() {
+      dropdown.style.opacity = '0';
+      dropdown.style.visibility = 'hidden';
+      dropdown.removeAttribute('data-visible');
+      dropdown.removeAttribute('data-visible');
+
+    }
+
+    function showDropdown() {
+      dropdown.style.opacity = '1';
+      dropdown.style.visibility = 'visible';
+      dropdown.setAttribute('data-visible', '');
+    }
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.matches('.about-us__form-input.type-of-site') && !e.target.closest('.dropdown-wrapper')) {
+        hideDropdown()
+        return;
+      }
+
+      if (e.target.matches('.dropdown-link')) {
+        dropdownInput.value = e.target.textContent;
+        dropdownLabel.classList.add('filled');
+      }
+
+      if (dropdown.hasAttribute('data-visible')) {
+        hideDropdown()
+      } else {
+        showDropdown()
+      }
+    });
+  })();
 
 });

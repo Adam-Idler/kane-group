@@ -380,7 +380,8 @@ a {
   height: 100%;
   top: 0;
   left: 0;
-  background: url('../assets/common/examples-bg.png');
+  background: url('../assets/common/examples-bg.png') no-repeat;
+  background-size: cover;
   transform: scale(-1, 1);
 }
 
@@ -393,6 +394,11 @@ a {
   max-height: 80vh;
   min-height: 680px;
   transition: opacity .5s, visibility .5s;
+}
+
+.slide:nth-child(1) img,
+.slide:nth-child(3) img {
+  object-position: top;
 }
 
 .slide:nth-child(2) {
@@ -493,7 +499,7 @@ a {
 }
 
 .slider .arrow::after {
-  border: 2px solid var(--red-color);
+  border-color: var(--red-color);
 }
 
 .arrow_left {

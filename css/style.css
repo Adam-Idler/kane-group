@@ -214,6 +214,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .header__contact-phone {
@@ -258,8 +259,8 @@ a {
   width: 280px;
   height: 75px;
   position: absolute;
-  bottom: -40px;
-  right: 45px;
+  bottom: -70px;
+  left: 48%;
   transition: opacity .3s, visibility .3s;
 }
 
@@ -362,16 +363,13 @@ a {
 
 /* slider start */
 
-.slider {
-  width: 100%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  filter: drop-shadow(2px 4px 10px #000000);
+.swiper {
   border-radius: 20px;
+  filter: drop-shadow(2px 4px 10px #000000);
+
 }
 
-.slider::after {
+.swiper::after {
   content: '';
   z-index: -1;
   position: absolute;
@@ -387,28 +385,9 @@ a {
 
 .slide {
   display: flex;
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  width: 90%;
   max-height: 80vh;
   min-height: 680px;
   transition: opacity .5s, visibility .5s;
-}
-
-.slide:nth-child(1) img,
-.slide:nth-child(3) img {
-  object-position: top;
-}
-
-.slide:nth-child(2) {
-  width: 70%;
-}
-
-.slide.active {
-  position: static;
-  opacity: 1;
-  visibility: visible;
 }
 
 .slide__left,
@@ -419,19 +398,27 @@ a {
 }
 
 .slider__text {
+  user-select: none;
   color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 30px;
+  font-size: 32px;
+  font-weight: 600;
+  max-width: 450px;
 }
 
 .slider__image {
+  user-select: none;
   width: 330px;
   height: 330px;
   align-self: center;
   border-radius: 50%;
   object-fit: cover;
+  object-position: top;
+}
+
+.slider__image.center {
   object-position: center;
 }
 
@@ -443,7 +430,7 @@ a {
   margin-bottom: 0;
 }
 
-.arrow {
+/* .arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -524,7 +511,7 @@ a {
   transform: rotate(-45deg);
   border-top: none;
   border-left: none;
-}
+} */
 
 /* slider end */
 
@@ -655,6 +642,8 @@ a {
   transition: box-shadow .3s, color .3s;
 }
 
+
+
 .pricing__card::after {
   content: '';
   position: absolute;
@@ -686,6 +675,26 @@ a {
 .pricing__card:hover .pricing__card-button {
   background-color: var(--red-color);
   color: #fff;
+}
+
+.pricing__card.sales-leader::before {
+  content: 'Лидер продаж!';
+  box-sizing: border-box;
+  position: absolute;
+  padding: 13px 0;
+  right: -5px;
+  top: -20px;
+  font-size: 9px;
+  font-weight: 500;
+  color: #000;
+  text-align: center;
+  display: block;
+  width: 50px;
+  height: 50px;
+  max-width: 50px;
+  max-height: 50px;
+  border-radius: 50%;
+  background-color: #F3EA00;
 }
 
 .pricing__card-name {
@@ -938,8 +947,9 @@ a {
 
 .about-us__fragment:last-of-type::before {
   content: '';
-  width: 90px;
-  height: 82px;
+  width: 67px;
+  height: 65px;
+  max-width: 100%;
   display: block;
   position: absolute;
   top: 0px;
@@ -968,18 +978,16 @@ a {
   margin-bottom: 15px;
 }
 
-/* .about-us__free-photo-text::before {
+.about-us__free-photo-text::before {
   content: '';
   position: absolute;
-  left: -4%;
+  top: -5px;
+  left: -3%;
   display: block;
-  width: 40px;
-  height: 20px;
-  border: 2px solid #10c618;
-  border-top: none;
-  border-right: none;
-  transform: rotate(-45deg);
-} */
+  width: 22px;
+  height: 22px;
+  background: url('../assets/thumb.png') no-repeat;
+}
 
 .about-us__free-photo-subtext {
   font-weight: 500;
@@ -1358,6 +1366,22 @@ body.examples-page::after {
 }
 
 /* modal end */
+
+/* swiper start */
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  /* border: 2px solid rgba(255, 255, 255, .5) */
+  color: rgba(255, 255, 255, .7);
+  transition: color .3s;
+}
+
+.swiper-button-prev:hover::after,
+.swiper-button-next:hover::after {
+  color: var(--red-color);
+}
+
+/* swiper end */
 
 .phone {
   text-align: left;

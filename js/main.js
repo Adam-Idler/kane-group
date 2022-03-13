@@ -116,14 +116,14 @@ document.addEventListener('DOMContentLoaded', () => {
       addDots();
     }
       
-    Slider({
-      sliderSelector: '.slider',
-      slideSelector: '.slide',
-      arrowsSelector: '.arrow',
-      arrowLeftSelector: '.arrow_left',
-      arrowRightSelector: '.arrow_right',
-      slideSpeed: 7000
-    });
+    // Slider({
+    //   sliderSelector: '.slider',
+    //   slideSelector: '.slide',
+    //   arrowsSelector: '.arrow',
+    //   arrowLeftSelector: '.arrow_left',
+    //   arrowRightSelector: '.arrow_right',
+    //   slideSpeed: 7000
+    // });
 
     Slider({
       sliderSelector: '.site-slider',
@@ -270,6 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (() => {
     const images = document.querySelectorAll('.examples-slider__slide img');
     const modalWrapper = document.querySelector('.modal-wrapper');
+    if (!modalWrapper) return;
     const exampleModal = modalWrapper.querySelector('.modal_example');
 
     function openModal(modal, content) {
@@ -305,4 +306,17 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     })
   })();
+
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true
+    },
+  });
 });

@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <script src="./js/main.js"></script>
   <title>Kane Digital Group</title>
@@ -67,67 +68,89 @@
   </header>
 
   <section class="section section_slider reverse-bg">
-    <div class="slider">
-      <div class="slide">
-        <div class="slide__left">
-          <img src="./assets/main-slider/Kirill.png" alt="Kirill" class="slider__image">
-        </div>
-        <div class="slide__right">
-          <div class="slider__text">
-            <p class="slider__paragraph">
-              Привет!
-            </p>
-            <p class="slider__paragraph">
-              Меня зовут КИРИЛЛ<br>я - организатор проектов.
-            </p>
-            <p class="slider__paragraph">
-              Моя задача - сделать для вас<br>удобный, информативный и<br>продающий сайт!
-            </p>
+    <div class="swiper">
+      <div class="slider swiper-wrapper">
+        <div class="slide swiper-slide">
+          <div class="slide__left">
+            <img src="./assets/main-slider/Kirill.png" alt="Kirill" class="slider__image">
+          </div>
+          <div class="slide__right">
+            <div class="slider__text">
+              <p class="slider__paragraph">
+                Привет!
+              </p>
+              <p class="slider__paragraph">
+                Меня зовут КИРИЛЛ<br>я - организатор проектов.
+              </p>
+              <p class="slider__paragraph">
+                Моя задача - сделать для вас<br>удобный, информативный и<br>продающий сайт!
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="slide">
-        <div class="slide__left">
-          <div class="slider__text">
-            <p class="slider__paragraph">
-              Привет!
-            </p>
-            <p class="slider__paragraph">
-              Меня зовут ПАВЕЛ<br>я - web-разработчик.
-            </p>
-            <p class="slider__paragraph">
-              Моя задача- оживить дизайн твоего сайта!
-            </p>
+  
+        <div class="slide swiper-slide">
+          <div class="slide__left">
+            <div class="slider__text">
+              <p class="slider__paragraph">
+                Привет!
+              </p>
+              <p class="slider__paragraph">
+                Меня зовут ПАВЕЛ<br>я - руководитель отдела веб-разработки.
+              </p>
+              <p class="slider__paragraph">
+                Моя задача- оживить дизайн твоего сайта!
+              </p>
+            </div>
+          </div>
+          <div class="slide__right">
+            <img src="./assets/main-slider/Pavel.png" alt="Pavel" class="slider__image center">
           </div>
         </div>
-        <div class="slide__right">
-          <img src="./assets/main-slider/Pavel.png" alt="Pavel" class="slider__image">
-        </div>
-      </div>
-
-      <div class="slide">
-        <div class="slide__left">
-          <img src="./assets/main-slider/Dasha.png" alt="Dasha" class="slider__image">
-        </div>
-        <div class="slide__right">
-          <div class="slider__text">
-            <p class="slider__paragraph">
-              Привет!
-            </p>
-            <p class="slider__paragraph">
-              Меня зовут ДАРЬЯ<br>я - руководитель отдела<br>web-дизайна.
-            </p>
-            <p class="slider__paragraph">
-              Моя задача - разработать твой<br>индивидуальный дизайн!
-            </p>
+  
+        <div class="slide swiper-slide">
+          <div class="slide__left">
+            <img src="./assets/main-slider/Dasha.png" alt="Dasha" class="slider__image">
+          </div>
+          <div class="slide__right">
+            <div class="slider__text">
+              <p class="slider__paragraph">
+                Привет!
+              </p>
+              <p class="slider__paragraph">
+                Меня зовут ДАРЬЯ<br>я - руководитель отдела<br>web-дизайна.
+              </p>
+              <p class="slider__paragraph">
+                Моя задача - разработать твой<br>индивидуальный дизайн!
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="arrow arrow_left"></div>
-      <div class="arrow arrow_right"></div>
+        <div class="slide swiper-slide">
+          <div class="slide__left">
+            <div class="slider__text">
+              <p class="slider__paragraph">
+                Привет!
+              </p>
+              <p class="slider__paragraph">
+                Меня зовут ПАВЕЛ<br>я - Руководитель юридического отдела.
+              </p>
+              <p class="slider__paragraph">
+                Моя задача- следить за юридической чистотой сделки,<br>защищать общие интересы
+              </p>
+            </div>
+          </div>
+          <div class="slide__right">
+            <img src="./assets/main-slider/pavel-ur.png" alt="Pavel" class="slider__image">
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
+    
   </section>
 
   <section class="section section_our-work" id="our-work">
@@ -172,23 +195,23 @@
   <section class="section section_pricing reverse-bg" id="pricing">
     <h2 class="section__title"><span class="accent-color">Ц</span>ены</h2>
     <div class="pricing__wrapper">
-      <div class="pricing__card">
+      <div class="pricing__card sales-leader">
         <h3 class="pricing__card-name">Лендинг</h3>
         <p class="pricing__card-price">от 20.000р</p>
         <p class="pricing__card-text">Разработаем Лендинг, который будет приносить вам новых клиентов из интернета</p>
-        <button type="button" class="pricing__card-button">Оставить заявку</button>
+        <a href="#about-us" class="pricing__card-button">Оставить заявку</a>
       </div>
       <div class="pricing__card">
         <h3 class="pricing__card-name">Корпоративный сайт</h3>
         <p class="pricing__card-price">от 42.000р</p>
         <p class="pricing__card-text">Разработаем многостраничный сайт вашей компании, который будет успешно продвигаться в поисковых системах</p>
-        <button type="button" class="pricing__card-button">Оставить заявку</button>
+        <a href="#about-us" class="pricing__card-button">Оставить заявку</a>
       </div>
       <div class="pricing__card">
         <h3 class="pricing__card-name">Интернет-магазин</h3>
         <p class="pricing__card-price">от 55.000р</p>
         <p class="pricing__card-text">Создадим Интернет-магазин с удобной навигацией и понятным интерфейсом</p>
-        <button type="button" class="pricing__card-button">Оставить заявку</button>
+        <a href="#about-us" class="pricing__card-button">Оставить заявку</a>
       </div>
     </div>
   </section>
@@ -210,25 +233,25 @@
         <h3 class="seo__plan-name">Продвижение по посетителям</h3>
         <p class="seo__plan-price">от 10.000р</p>
         <p class="seo__plan-info">Привлечением целевых посетителей за копейки!</p>
-        <a href="#" class="page-link">Оставить заявку</a>
+        <a href="#about-us" class="page-link">Оставить заявку</a>
       </div>
       <div class="seo__plan">
         <h3 class="seo__plan-name">Продвижение по факту вывода</h3>
         <p class="seo__plan-price">от 10.000р</p>
         <p class="seo__plan-info">Мы уверенны в результате! Плати только за те вопросы, которые вышли на первую страницу поисковых систем!</p>
-        <a href="#" class="page-link">Оставить заявку</a>
+        <a href="#about-us" class="page-link">Оставить заявку</a>
       </div>
       <div class="seo__plan">
         <h3 class="seo__plan-name">Продвижение молодого сайта</h3>
         <p class="seo__plan-price">от 15.000р</p>
         <p class="seo__plan-info">Специальный тариф для продвижения новых сайтов. Контролируйте каждый этап работ!</p>
-        <a href="#" class="page-link">Оставить заявку</a>
+        <a href="#about-us" class="page-link">Оставить заявку</a>
       </div>
       <div class="seo__plan">
         <h3 class="seo__plan-name">Все включено</h3>
         <p class="seo__plan-price">от 20.000р</p>
-        <p class="seo__plan-info"></p>
-        <a href="#" class="page-link">Оставить заявку</a>
+        <p class="seo__plan-info">Полный пакет услуг</p>
+        <a href="#about-us" class="page-link">Оставить заявку</a>
       </div>
     </div>
   </section>
@@ -247,7 +270,7 @@
         </div>
         <div class="about-us__fragment">
           <h3 class="about-us__fragment-title"><span class="accent-color">Прозрачность</span> работы</h3>
-          <p class="about-us__fragment-text">Любой наш клиент может запросить данные по проводящимся работам. <span class="accent-color">Доверие</span> - залог прлодотворного сотрудничества и высоких результатов в работе. И мы используем прозрачность наших работ в качестве конкурентного преимущества</p>
+          <p class="about-us__fragment-text">Любой наш клиент может запросить данные по проводящимся работам. <span class="accent-color">Доверие</span> - залог плодотворного сотрудничества и высоких результатов в работе. И мы используем прозрачность наших работ в качестве конкурентного преимущества</p>
         </div>
       </div>
 
@@ -323,6 +346,8 @@
       </p>
     </div>
   </footer>
+
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 </body>
 
 </html>

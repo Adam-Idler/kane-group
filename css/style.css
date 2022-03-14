@@ -35,7 +35,7 @@ a {
   display: flex;
   flex-direction: column;
   color: #fff;
-  text-shadow: 4px 4px 8px var(--red-color), 1px 1px var(--red-color), 1px -1px var(--red-color), -1px 1px var(--red-color), -1px -1px var(--red-color);
+  /* text-shadow: 4px 4px 8px var(--red-color), 1px 1px var(--red-color), 1px -1px var(--red-color), -1px 1px var(--red-color), -1px -1px var(--red-color); */
   font-family: 'Montserrat';
   line-height: 1;
 }
@@ -469,7 +469,9 @@ a {
 .swiper {
   border-radius: 20px;
   filter: drop-shadow(2px 4px 10px #000000);
-
+  background-repeat: no-repeat;
+  background-size: cover;
+  
 }
 
 .swiper::after {
@@ -481,7 +483,8 @@ a {
   height: 100%;
   top: 0;
   left: 0;
-  background:  no-repeat;
+  background-image: url('../assets/common/examples-bg.webp');
+  background-repeat: no-repeat;
   background-size: cover;
   transform: scale(-1, 1);
 }
@@ -1161,6 +1164,7 @@ a {
 }
 
 .about-us__form-submit {
+  cursor: pointer;
   background: transparent;
   border: 3px solid #fff;
   border-radius: 13px;

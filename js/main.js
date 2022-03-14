@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Слайдер
   (() => {
-    function Slider({ 
+    function Slider({
       sliderSelector,
       slideSelector,
       dotsSelector,
@@ -38,9 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
       slides[0].classList.add('active');
 
       if (slides.length === 1) return;
-      
+
       let currentSlide = 0,
-          intervalID;
+        intervalID;
 
       const addDots = () => {
         if (!dotsListSelector) return;
@@ -163,10 +163,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Дропдаун в форме
   (() => {
-    const dropdownLabel = document.querySelector('.about-us__form-dropdown-label');
+    const dropdownLabel = document.querySelector('.section_about-us .about-us__form-dropdown-label');
     if (!dropdownLabel) return
-    const dropdownInput = dropdownLabel.querySelector('.about-us__form-input.type-of-site');
-    const dropdown = dropdownLabel.querySelector('.dropdown-wrapper');
+    const dropdownInput = dropdownLabel.querySelector('.section_about-us .about-us__form-input.type-of-site');
+    const dropdown = dropdownLabel.querySelector('.section_about-us .dropdown-wrapper');
 
     function hideDropdown() {
       dropdown.style.opacity = '0';
@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.addEventListener('click', (e) => {
-      if (!e.target.matches('.about-us__form-input.type-of-site') && !e.target.closest('.dropdown-wrapper')) {
+      if (!e.target.matches('.about-us__form-input.type-of-site') && !e.target.closest('.section_about-us .dropdown-wrapper')) {
         hideDropdown()
         return;
       }
@@ -209,44 +209,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const phone = document.querySelectorAll('.phone');
 
     function maskPhone(elem, masked = '+7 (___) ___-__-__') {
-        function mask(event) {
-          const keyCode = event.keyCode;
-          const template = masked,
-            def = template.replace(/\D/g, ''),
-            val = this.value.replace(/\D/g, '');
-          let i = 0,
-            newValue = template.replace(/[_\d]/g, a => (i < val.length ? val.charAt(i++) || def.charAt(i) : a));
-          i = newValue.indexOf('_');
-          if (i !== -1) {
-            newValue = newValue.slice(0, i);
-          }
-          let reg = template.substr(0, this.value.length)
-            .replace(/_+/g, a => '\\d{1,' + a.length + '}')
-            .replace(/[+()]/g, '\\$&');
-          reg = new RegExp('^' + reg + '$');
-    
-          if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) {
-            this.value = newValue;
-          }
-    
-          if (event.type === 'blur' && this.value.length < 5) {
-            this.value = '';
-          }
+      function mask(event) {
+        const keyCode = event.keyCode;
+        const template = masked,
+          def = template.replace(/\D/g, ''),
+          val = this.value.replace(/\D/g, '');
+        let i = 0,
+          newValue = template.replace(/[_\d]/g, a => (i < val.length ? val.charAt(i++) || def.charAt(i) : a));
+        i = newValue.indexOf('_');
+        if (i !== -1) {
+          newValue = newValue.slice(0, i);
         }
-        elem.addEventListener('input', mask);
-        elem.addEventListener('focus', mask);
-        elem.addEventListener('blur', mask);
+        let reg = template.substr(0, this.value.length)
+          .replace(/_+/g, a => '\\d{1,' + a.length + '}')
+          .replace(/[+()]/g, '\\$&');
+        reg = new RegExp('^' + reg + '$');
+
+        if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) {
+          this.value = newValue;
+        }
+
+        if (event.type === 'blur' && this.value.length < 5) {
+          this.value = '';
+        }
+      }
+      elem.addEventListener('input', mask);
+      elem.addEventListener('focus', mask);
+      elem.addEventListener('blur', mask);
     }
 
     userName.forEach(elem => {
-        elem.addEventListener('input', e => {
-          e.target.value = e.target.value.replace(/[^А-Яа-яёЁ ]/g, '');
-        });
-        elem.addEventListener('blur', e => {
-          e.target.value = e.target.value.replace(/^-+|^ +|-+$| +$|[^А-Яа-яёЁ -]/g, '');
-          e.target.value = e.target.value.replace(/--+/g, '-');
-          e.target.value = e.target.value.replace(/ +/g, ' ');
-        });
+      elem.addEventListener('input', e => {
+        e.target.value = e.target.value.replace(/[^А-Яа-яёЁ ]/g, '');
+      });
+      elem.addEventListener('blur', e => {
+        e.target.value = e.target.value.replace(/^-+|^ +|-+$| +$|[^А-Яа-яёЁ -]/g, '');
+        e.target.value = e.target.value.replace(/--+/g, '-');
+        e.target.value = e.target.value.replace(/ +/g, ' ');
+      });
     });
 
     email.forEach(elem => {
@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
       img.addEventListener('click', () => {
         let clonedImg = img.cloneNode(true);
         img.classList.add('hidden');
-        
+
         openModal(exampleModal, clonedImg);
 
         exampleModal.style.height = clonedImg.offsetHeight + 80 + 'px';
@@ -315,6 +315,61 @@ document.addEventListener('DOMContentLoaded', () => {
       delay: 5000,
       disableOnInteraction: false,
       pauseOnMouseEnter: true
-    },
+    }
   });
+
+  // Отправка форм
+  (() => {
+    let serialize = (form) => {
+      let items = form.querySelectorAll('input, select, textarea'),
+        str = '';
+
+      items.forEach((item, i) => {
+        const { name, value, type } = item;
+        let separator = i === 0 ? '' : '&';
+        if (type === 'checkbox') {
+          if (item.checked) {
+            str += separator + name + '=' + 'Да';
+          } else {
+            str += separator + name + '=' + 'Нет';
+          }
+        } else if (value) {
+          str += separator + name + '=' + value;
+        }
+      });
+
+      return str;
+    };
+
+    let formSend = (form) => {
+      let data = serialize(form),
+        xhr = new XMLHttpRequest(),
+        url = 'mail/mail.php';
+
+      xhr.open('POST', url);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+      xhr.onload = () => {
+        if (xhr.response === 'success') {
+          console.log('done');
+        } else {
+        
+        }
+
+        form.reset();
+      };
+
+      xhr.send(data);
+    };
+
+    const forms = document.querySelectorAll('form');
+
+    forms.forEach(form => {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        formSend(form);
+      });
+    });
+  })();
 });
+

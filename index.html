@@ -5,8 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css//normalize.css">
+  <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,7 +61,7 @@
         </div>
         <button type="button" class="header__contact-button">Заказать звонок</button>
         <form class="header__contact-button-wrapper">
-          <input type="phone" id="header-phone" name="header-phone" class="header__contact-phone-input phone">
+          <input type="phone" id="header-phone" name="Клиент ждет звонка" class="header__contact-phone-input phone">
           <button type="submit" class="header__contact-phone-submit"></button>
         </form>
       </div>
@@ -68,7 +69,7 @@
   </header>
 
   <section class="section section_slider reverse-bg">
-    <div data-bg="assets/common/examples-bg.webp" class="swiper lazy">
+    <div class="swiper">
       <div class="slider swiper-wrapper">
         <div class="slide swiper-slide">
           <div class="slide__left">
@@ -278,9 +279,9 @@
         <h2 class="about-us__title">Оставить <span class="accent-color">заявку</span></h2>
         <form class="about-us__form-main">
           <div class="about-us__form-wrapper">
-            <input placeholder="Имя" type="text" name="name" class="about-us__form-input name" />
+            <input placeholder="Имя" type="text" name="Имя" class="about-us__form-input name" required />
             <label class="about-us__form-dropdown-label">
-              <input placeholder="Тип сайта" type="text" class="about-us__form-input type-of-site" readonly>
+              <input placeholder="Тип сайта" name="Тип сайта" type="text" class="about-us__form-input type-of-site" readonly>
               <div class="dropdown-wrapper">
                 <ul class="dropdown-list">
                   <li class="dropdown-list-item">
@@ -298,11 +299,11 @@
                 </ul>
               </div>
             </label>
-            <input placeholder="E-mail" type="email" name="email" class="about-us__form-input email" />
-            <input placeholder="Телефон" type="phone" name="phone" class="about-us__form-input phone" />
+            <input placeholder="E-mail" type="email" name="E-mail" class="about-us__form-input email" required />
+            <input placeholder="Телефон" type="phone" name="Телефон" class="about-us__form-input phone" required />
 
             <div class="checkbox-wrapper">
-              <input type="checkbox" id="cbx" style="display: none;">
+              <input type="checkbox" id="cbx" name="SEO-продвижение" style="display: none;">
               <label for="cbx" class="check">
                 <svg width="18px" height="18px" viewBox="0 0 18 18">
                   <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>

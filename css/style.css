@@ -230,12 +230,7 @@ a {
   stroke-dasharray: 22;
   stroke-dashoffset: 66;
 }
-.check:hover svg {
-  stroke: #9e11c1;
-}
-#cbx:checked + .check svg {
-  stroke: #9e11c1;
-}
+
 #cbx:checked + .check svg path {
   stroke-dashoffset: 60;
   transition: all 0.3s linear;
@@ -434,6 +429,7 @@ a {
   text-align: center;
 }
 
+
 .section::after {
   content: '';
   display: block;
@@ -444,7 +440,7 @@ a {
   top: 0;
   left: 0;
   /* background: linear-gradient(0deg, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.38)), url('../assets/common/bg.jpg') no-repeat center; */
-  background: no-repeat center;
+  background: url('../assets/common/bg.jpg') no-repeat center;
   background-size: cover;
 }
 
@@ -1219,7 +1215,7 @@ a {
   font-family: 'Roboto';
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-bottom: 60px;
 }
 
@@ -1247,7 +1243,7 @@ body.examples-page::after {
   position: absolute;
   top: 118px;
   z-index: -10;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.38)), url('../assets/common/examples-bg.png') no-repeat center;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.38)), url('../assets/common/examples-bg.webp') no-repeat center;
   background-size: cover;
 }
 

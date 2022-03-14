@@ -21,7 +21,7 @@
     <div class="header__container">
       <nav class="header__nav">
         <div class="header__link-wrapper">
-          <a href="./index.html" class="header__link">Главная</a>
+          <a href="./" class="header__link">Главная</a>
         </div>
         <div class="header__link-wrapper">
           <a href="#our-work" class="header__link">Примеры работ</a>
@@ -67,12 +67,12 @@
     </div>
   </header>
 
-  <section class="section section_slider reverse-bg">
-    <div class="swiper">
+  <section class="section section_slider reverse-bg lazy">
+    <div data-bg="assets/common/examples-bg.png" class="swiper lazy">
       <div class="slider swiper-wrapper">
         <div class="slide swiper-slide">
           <div class="slide__left">
-            <img src="./assets/main-slider/Kirill.png" alt="Kirill" class="slider__image">
+            <img data-src="./assets/main-slider/kirill.png" alt="Kirill" class="slider__image lazy">
           </div>
           <div class="slide__right">
             <div class="slider__text">
@@ -104,13 +104,13 @@
             </div>
           </div>
           <div class="slide__right">
-            <img src="./assets/main-slider/Pavel.png" alt="Pavel" class="slider__image">
+            <img data-src="./assets/main-slider/pavel.png" alt="Pavel" class="slider__image lazy">
           </div>
         </div>
   
         <div class="slide swiper-slide">
           <div class="slide__left">
-            <img src="./assets/main-slider/Dasha.png" alt="Dasha" class="slider__image">
+            <img data-src="./assets/main-slider/dasha.png" alt="Dasha" class="slider__image lazy">
           </div>
           <div class="slide__right">
             <div class="slider__text">
@@ -142,7 +142,7 @@
             </div>
           </div>
           <div class="slide__right">
-            <img src="./assets/main-slider/pavel-ur.png" alt="Pavel" class="slider__image">
+            <img data-src="./assets/main-slider/pavel-ur.png" alt="Pavel" class="slider__image lazy">
           </div>
         </div>
 
@@ -153,22 +153,22 @@
     
   </section>
 
-  <section class="section section_our-work" id="our-work">
+  <section data-bg="./assets/common/bg.jpg" class="section section_our-work lazy" id="our-work">
     <h2 class="section__title">Это сделали <span class="accent-color">мы</span></h2>
     <div class="our-work">
       <div class="our-work__left-side">
-        <img src="./assets/komp.png" alt="Computer" class="our-work__computer-image">
+        <img data-src="./assets/komp.png" alt="Computer" class="our-work__computer-image lazy">
         <div class="our-work__slider-wrapper">
           <div class="our-work__comp-slider">
             <div class="our-work__comp-slide">
-              <img src="./assets/examples-slider/corporate/slide-1.jpg" alt="Slide image" class="our-work__comp-slider-image">
+              <img data-src="./assets/examples-slider/corporate/slide-1.jpg" alt="Slide image" class="our-work__comp-slider-image lazy">
             </div>
 
             <div class="our-work__comp-slide">
-              <img src="./assets/examples-slider/online-store/slide-1.png" alt="Slide image" class="our-work__comp-slider-image">
+              <img data-src="./assets/examples-slider/online-store/slide-1.png" alt="Slide image" class="our-work__comp-slider-image lazy">
             </div>
             <div class="our-work__comp-slide">
-              <img src="./assets/examples-slider/online-store/slide-2.jpg" alt="Slide image" class="our-work__comp-slider-image">
+              <img data-src="./assets/examples-slider/online-store/slide-2.jpg" alt="Slide image" class="our-work__comp-slider-image lazy">
             </div>
           </div>
         </div>
@@ -192,7 +192,7 @@
 
   </section>
 
-  <section class="section section_pricing reverse-bg" id="pricing">
+  <section data-bg="./assets/common/bg.jpg" class="section section_pricing reverse-bg lazy" id="pricing">
     <h2 class="section__title"><span class="accent-color">П</span>редложения</h2>
     <div class="pricing__wrapper">
       <div class="pricing__card sales-leader">
@@ -216,15 +216,15 @@
     </div>
   </section>
 
-  <section class="section section_seo" id="seo">
+  <section data-bg="./assets/common/bg.jpg" class="section section_seo lazy" id="seo">
     <div class="seo">
       <div class="seo__image-wrapper">
-        <img src="./assets/seo/moon.png" alt="Moon" class="seo__moon-image">
+        <img data-src="./assets/seo/moon.png" alt="Moon" class="seo__moon-image lazy">
       </div>
       <div class="seo__text">
         <h2 class="seo__title"><span class="accent-color">S</span>EO - продвижение</h2>
         <p class="seo__info">SEO (Search Engine Optimization — оптимизация под поисковые системы) — комплекс методов, позволяющих поднять сайт в выдаче поисковых систем как можно выше.</p>
-        <img src="./assets/seo/seo.png" alt="seo image" class="seo__seo-image">
+        <img data-src="./assets/seo/seo.png" alt="seo image" class="seo__seo-image lazy">
       </div>
     </div>
 
@@ -256,7 +256,7 @@
     </div>
   </section>
 
-  <section class="section section_about-us reverse-bg" id="about-us">
+  <section data-bg="./assets/common/bg.jpg" class="section section_about-us reverse-bg lazy" id="about-us">
     <div class="about-us__main">
       <div class="about-us">
         <h2 class="about-us__title">Почему <span class="accent-color">выбирают</span> нас?</h2>
@@ -334,13 +334,13 @@
       </div>
       <div class="footer__socials">
         <a href="https://instagram.com/kane_digotal_group?utm_medium=copy_link" class="footer__social-item inst">
-          <img src="./assets/footer/inst.png" alt="inst">
+          <img data-src="./assets/footer/inst.png" class="lazy" alt="inst">
         </a>
         <a href="https://vk.com/kane_digital_group" class="footer__social-item vk">
-          <img src="./assets/footer/vk.png" alt="vk">
+          <img data-src="./assets/footer/vk.png" class="lazy" alt="vk">
         </a>
         <a href="https://t.me/KaneGroup" class="footer__social-item telegram">
-          <img src="./assets/footer/telegram.png" alt="telegram">
+          <img data-src="./assets/footer/telegram.png" class="lazy" alt="telegram">
         </a>
         <!-- <a href="#" class="footer__social-item facebook">
           <img src="./assets/footer/facebook.png" alt="facebook">
@@ -360,6 +360,7 @@
   </footer>
 
   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.6.1/dist/lazyload.min.js"></script>
 </body>
 
 </html>

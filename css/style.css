@@ -211,18 +211,6 @@ a {
   -webkit-tap-highlight-color: transparent;
   transform: translate3d(0, 0, 0);
 }
-.check:before {
-  content: "";
-  position: absolute;
-  top: -15px;
-  left: -15px;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: rgba(34,50,84,0.03);
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
 .check svg {
   position: relative;
   z-index: 1;
@@ -241,9 +229,6 @@ a {
 .check svg polyline {
   stroke-dasharray: 22;
   stroke-dashoffset: 66;
-}
-.check:hover:before {
-  opacity: 1;
 }
 .check:hover svg {
   stroke: #9e11c1;
@@ -459,7 +444,7 @@ a {
   top: 0;
   left: 0;
   /* background: linear-gradient(0deg, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.38)), url('../assets/common/bg.jpg') no-repeat center; */
-  background: url('../assets/common/bg.jpg') no-repeat center;
+  background: no-repeat center;
   background-size: cover;
 }
 
@@ -500,7 +485,7 @@ a {
   height: 100%;
   top: 0;
   left: 0;
-  background: url('../assets/common/examples-bg.png') no-repeat;
+  background:  no-repeat;
   background-size: cover;
   transform: scale(-1, 1);
 }

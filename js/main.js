@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Lasy load
+  (() => {
+    var lazyLoadInstance = new LazyLoad({
+      elements_selector: '.lazy'
+    });
+  })();
+
   // Кнопка "заказать звонок"
   (() => {
     const phoneBtn = document.querySelector('.header__contact-button');
@@ -115,15 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       addDots();
     }
-      
-    // Slider({
-    //   sliderSelector: '.slider',
-    //   slideSelector: '.slide',
-    //   arrowsSelector: '.arrow',
-    //   arrowLeftSelector: '.arrow_left',
-    //   arrowRightSelector: '.arrow_right',
-    //   slideSpeed: 7000
-    // });
 
     Slider({
       sliderSelector: '.site-slider',

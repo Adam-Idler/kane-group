@@ -14,6 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
     phoneBtn.addEventListener('click', () => {
       headerPhone.classList.toggle('active');
     });
+
+    document.addEventListener('click', (e) => {
+      if (e.target !== headerPhone && e.target !== phoneBtn) headerPhone.classList.remove('active');
+    })
   })();
 
   // Слайдер
@@ -317,7 +321,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  const swiperPricingMobild = new Swiper('.swiper-pricing-mobile', {
+  const swiperOurWorkMobile = new Swiper('.swiper-our-work-mobile', {
+    effect: 'creative',
+      creativeEffect: {
+        prev: {
+          translate: [0, 0, -500],
+          opacity: 0
+        },
+        next: {
+          opacity: 1,
+          translate: ['200%', 0, 10]
+        }
+      }
+  });
+
+  const swiperPricingMobile= new Swiper('.swiper-pricing-mobile', {
     effect: 'coverflow',
     slideToClickedSlide: true,
     centeredSlides: true,
@@ -330,6 +348,20 @@ document.addEventListener('DOMContentLoaded', () => {
 			modifier: 1.5,
 			slideShadows : true,
 		}
+  });
+
+  const swiperSeoMobile = new Swiper('.swiper-seo-mobile-slider', {
+    effect: 'creative',
+      creativeEffect: {
+        prev: {
+          translate: [0, 0, -500],
+          opacity: 0
+        },
+        next: {
+          opacity: 1,
+          translate: ['200%', 0, 10]
+        }
+      }
   });
 
   // Отправка форм
@@ -355,19 +387,33 @@ document.addEventListener('DOMContentLoaded', () => {
       return str;
     };
 
-    let formSend = (form) => {
-      let data = serialize(form),
-        xhr = new XMLHttpRequest(),
-        url = 'mail/mail.php';
+    const formSend = (form) => {
+      let data = serialize(form);
+      let xhr = new XMLHttpRequest();
+      let url = 'mail/mail.php';
 
       xhr.open('POST', url);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
+      const formSubmitText = form.querySelector('.about-us__form-submit-text');
+      const showText = (text) => {
+        if (!formSubmitText) return
+
+        formSubmitText.style.display = 'block';
+        formSubmitText.textContent = text;
+        setTimeout(() => formSubmitText.style.display = 'none', 5000)
+      }
+
+      if (formSubmitText) {
+        formSubmitText.style.display = 'block';
+        formSubmitText.textContent = 'Отправка...';
+      }
+
       xhr.onload = () => {
         if (xhr.response === 'success') {
-          console.log('done');
+          showText('Мы скоро свяжемся с Вами!')
         } else {
-        
+          showText('Произошла ошибка!')
         }
 
         form.reset();

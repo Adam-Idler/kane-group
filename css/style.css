@@ -358,7 +358,7 @@ a {
   height: 75px;
   position: absolute;
   bottom: -70px;
-  left: 50%;
+  left: 51%;
   transition: opacity .3s, visibility .3s;
 }
 
@@ -630,6 +630,10 @@ a {
   width: 50%;
 }
 
+.swiper-our-work-mobile {
+  display: none;
+}
+
 .our-work__left-side {
   display: flex;
   justify-content: center;
@@ -881,6 +885,10 @@ a {
   padding: 50px 180px;
 }
 
+.section_seo > .seo__title {
+  display: none;
+}
+
 .seo {
   display: flex;
   margin-bottom: 90px;
@@ -924,6 +932,10 @@ a {
 
 .seo__plans {
   display: flex;
+}
+
+.seo__plans.mobile {
+  display: none;
 }
 
 .seo__plan {
@@ -997,6 +1009,12 @@ a {
 .about-us__title {
   font-size: 32px;
   font-weight: 500;
+}
+
+.about-us__form-submit-text {
+  display: none;
+  font-size: 17px;
+  margin-top: 20px;
 }
 
 .about-us__fragment {
@@ -1664,6 +1682,10 @@ body.examples-page::after {
 }
 
 @media (max-width: 850px) {
+  html {
+    overflow-x: hidden;
+  }
+
   .header__container {
     padding: 20px;
   }
@@ -1755,7 +1777,7 @@ body.examples-page::after {
   }
 
   .swiper-pricing-mobile {
-    max-width: 300px;
+    max-width: 250px;
     margin: 0 auto;
   }
 
@@ -1777,7 +1799,6 @@ body.examples-page::after {
 
   .pricing__wrapper.mobile .pricing__card-text {
     min-height: 117px;
-    /* margin-bottom: 110px; */
   }
 
   .pricing__wrapper.mobile .swiper-slide-active .pricing__card-text {
@@ -1809,10 +1830,6 @@ body.examples-page::after {
     transition: opacity .3s;
   }
 
-  .pricing__wrapper.mobile .swiper-slide-active.pricing__card:hover::after {
-    
-  }
-  
   .pricing__wrapper.mobile .swiper-slide-active.pricing__card {
     box-shadow: 0px 0px 24px 10px rgba(165, 11, 11, 0.45);
     color: #000;
@@ -1826,13 +1843,232 @@ body.examples-page::after {
     background-color: var(--red-color);
     color: #fff;
   }
+
+  .section_seo {
+    padding: 50px 30px;
+  }
+
+  .seo__plan-name {
+    font-size: 16px;
+  }
+
+  .seo__plan-price {
+    font-size: 20px;
+  }
+
+  .slider__text {
+    font-size: 18px;
+  }
+
+  .slider__image {
+    width: 220px;
+    height: 220px;
+  }
+
+  .slide {
+    min-height: 340px;
+  }
 }
 
 @media (max-width: 770px) {
+  .about-us__free-photo-text::before {
+    left: 0%;
+  }
 
+  .section_seo > .seo__title {
+    display: block;
+    margin-bottom: 40px;
+  }
+
+  .seo .seo__title {
+    display: none;
+  }
+
+  .seo__text {
+    display: flex;
+    max-width: none;
+  }
+
+  .seo__image-wrapper, .seo__text {
+    width: 100%;
+  }
+
+  .seo__image-wrapper {
+    position: absolute;
+  }
+
+  .seo__info {
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 22px;
+    margin-right: 50px;
+  }
+
+  .seo__seo-image {
+    max-width: 280px;
+  }
+
+  .seo__plans {
+    display: none;
+  }
+
+  .seo__plans.mobile {
+    display: flex;
+    margin-left: 90px;
+  }
+
+  .seo__plans.mobile::before {
+    content: '';
+    z-index: 99999;
+    position: absolute;
+    top: -55px;
+    left: -146px;
+    display: block;
+    width: 250px;
+    height: 350px;
+    filter: drop-shadow(5px 0px 13px rgba(0, 0, 0, 0.25));
+    background: url('../assets/seo/moon.png');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .swiper-seo-mobile-slider {
+    margin: 0 auto;
+    width: 240px;
+    height: 250px;
+  }
+
+  .seo__moon-image {
+    display: none;
+  }
+
+  .seo__plans.mobile .seo__plan {
+    position: relative;
+    border-right: none;
+    padding: 10px;
+    font-weight: 600;
+    background: linear-gradient(95deg, rgba(125, 11, 165, .7)  0%, rgba(165, 11, 11, .7) 100%);
+    box-shadow: 2px 4px 11px rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    color: #fff;
+  }
+
+  .seo__plans.mobile .seo__plan-price {
+    font-size: 18px;
+    position: relative;
+  }
+
+  .seo__plans.mobile .seo__plan-price::after {
+    content: '';
+    position: absolute;
+    right: -40px;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #fff;
+    transform: rotate(45deg);
+    border-bottom: none;
+    border-left: none;
+  }
+
+  .seo__plans.mobile .seo__plan-info {
+    padding: 0 15px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+  }
+
+  .seo__plans.mobile .page-link {
+    padding: 10px;
+    max-width: 150px;
+    font-size: 12px;
+    background-color: #fff;
+    color: var(--red-color);
+  }
+  
+  .seo__plans.mobile .page-link::after {
+    background: #fff;
+  }
+
+  .seo__plans.mobile .page-link::after:hover {
+    background: #fff;
+  } 
+
+  .about-us__form-main {
+    width: 400px;
+    padding: 30px 20px;
+  }
+
+  .our-work__right-side > .our-work__card {
+    display: none;
+  }
+
+  .swiper-our-work-mobile {
+    display: block;
+    width: 280px;
+    margin-bottom: 50px;
+  }
+
+  .our-work__right-side {
+    justify-content: center;
+  }
+
+  .swiper-our-work-mobile .our-work__card {
+    padding: 15px 25px;
+    background: linear-gradient(95deg, rgba(125, 11, 165, 0.7) 0%,  rgba(165, 11, 11, 0.7) 100%);
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.81);
+    border-radius: 8px;
+    display: flex;
+    margin: 0;
+  }
+
+  .our-work__card-title {
+    font-size: 16px;
+  }
+
+  .our-work__card-title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #fff;
+    transform: translateY(-50%) rotate(45deg);
+    border-bottom: none;
+    border-left: none;
+  }
+
+  .our-work__card-text {
+    font-size: 14px;
+  }
+
+  .our-work__computer-image {
+    height: 300px;
+  }
+
+  .our-work__comp-slide {
+    width: 221.5px;
+    height: 147px;
+  }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 650px) {
+  .pricing__card {
+    padding: 30px 15px;
+  }
+
+  .swiper-pricing-mobile {
+    max-width: 220px;
+  }
+
+  .pricing__card-text {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 500px) {
 
 }
 

@@ -40,7 +40,7 @@ $headers .= "From:" . adopt($form_subject) . " <$admin_email>\r\n";
 $success_send = mail($admin_email, adopt($form_subject), $message, $headers);
 
 if ($success_send) {
-  echo 'succes';
+  echo 'success';
 } else {
   echo 'error';
 }

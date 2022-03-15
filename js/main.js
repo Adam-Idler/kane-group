@@ -173,7 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
       dropdown.style.visibility = 'hidden';
       dropdown.removeAttribute('data-visible');
       dropdown.removeAttribute('data-visible');
-
     }
 
     function showDropdown() {
@@ -316,6 +315,21 @@ document.addEventListener('DOMContentLoaded', () => {
       disableOnInteraction: false,
       pauseOnMouseEnter: true
     }
+  });
+
+  const swiperPricingMobild = new Swiper('.swiper-pricing-mobile', {
+    effect: 'coverflow',
+    slideToClickedSlide: true,
+    centeredSlides: true,
+		slidesPerView: 1,
+    initialSlide: 1,
+    spaceBetween: -30,
+    coverflow: {
+			stretch: 50,
+			depth: 500,
+			modifier: 1.5,
+			slideShadows : true,
+		}
   });
 
   // Отправка форм

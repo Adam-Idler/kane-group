@@ -47,12 +47,34 @@
         </div>
       </nav>
 
-      <div class="logo-wrapper">
+      <div class="burger-menu">
+        <button class="burger-menu__button"></button>
+      </div>
+
+      <nav class="burger-menu__nav">
+        <ul class="burger-menu__list">
+          <li class="burger-menu__list-item">
+            <a href="#our-work">Наши работы</a>
+          </li>
+
+          <li class="burger-menu__list-item">
+            <a href="#pricing">Цены</a>
+          </li>
+          <li class="burger-menu__list-item">
+            <a href="#seo">SEO - продвижение</a>
+          </li>
+          <li class="burger-menu__list-item">
+            <a href="#about-us">Оставить заявку</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="./" class="logo-wrapper">
         <div class="logo">
           <span>KANE</span>
           <span>Digital group</span>
         </div>
-      </div>
+      </a>
   
       <div class="header__contact">
         <div class="header__contact-phone">
@@ -68,9 +90,8 @@
     </div>
   </header>
 
+  <h2 class="section__title examples-section__title">Примеры <span class="accent-color">работ</span></h2>
   <section class="section section_examples">
-    <h2 class="section__title">Примеры <span class="accent-color">работ</span></h2>
-
     <div class="site-slider">
       <div class="site-slider__slide">
         <div class="site-slider__name-wrapper">
@@ -133,13 +154,68 @@
     </div>
   </section>
 
+  <div class="section section_examples-mobile landings">
+    <div class="site-slider__name-wrapper">
+      <h3 class="site-slider__name mobile"><span class="accent-color">Л</span>ендинги</h3>
+    </div>
+    <div class="swiper-landings">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide landing-slide">
+          <img src="./assets/examples-slider/landing/slide-1.jpg" alt="Slide image" class="landing-slide__img">
+        </div>
+        <div class="swiper-slide landing-slide">
+          <img data-src="./assets/examples-slider/landing/slide-2.jpg" alt="Slide image" class="landing-slide__img lazy">
+        </div>
+        <div class="swiper-slide landing-slide">
+          <img data-src="./assets/examples-slider/landing/slide-3.png" alt="Slide image" class="landing-slide__img lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section section_examples-mobile big-slider">
+    <div class="site-slider__name-wrapper">
+      <h3 class="site-slider__name mobile"><span class="accent-color">К</span>орпоративные сайты</h3>
+    </div>
+    <div class="swiper-examples-big">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide examples-big-slide">
+          <img src="./assets/examples-slider/corporate/slide-1.jpg" alt="Slide image" class="big-slider__image">
+        </div>
+        <div class="swiper-slide examples-big-slide">
+          <img src="./assets/examples-slider/corporate/slide-2.png" alt="Slide image" class="big-slider__image">
+        </div>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+
+  <div class="section section_examples-mobile big-slider">
+    <div class="site-slider__name-wrapper">
+      <h3 class="site-slider__name mobile"><span class="accent-color">И</span>нтернет магазины</h3>
+    </div>
+    <div class="swiper-examples-big">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide examples-big-slide">
+          <img src="./assets/examples-slider/online-store/slide-1.png" alt="Slide image" class="big-slider__image">
+        </div>
+        <div class="swiper-slide examples-big-slide">
+          <img src="./assets/examples-slider/online-store/slide-2.jpg" alt="Slide image" class="big-slider__image">
+        </div>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+
   <footer class="footer">
     <div class="footer__container">
       <div class="logo-wrapper">
-        <div class="logo">
+        <a href="./" class="logo">
           <span>KANE</span>
           <span>Digital group</span>
-        </div>
+        </a>
       </div>
       <div class="footer__socials">
         <a href="https://instagram.com/kane_digotal_group?utm_medium=copy_link" class="footer__social-item inst">

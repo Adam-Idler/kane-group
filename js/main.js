@@ -6,6 +6,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
+  // Бургер меню
+  (() => {
+    const burgerBtn = document.querySelector('.burger-menu');
+    const burgerMenu = document.querySelector('.burger-menu__nav');
+
+    if (!burgerBtn || !burgerMenu) return;
+
+    window.addEventListener('resize', () => {
+      if (document.documentElement.clientWidth <= 770) burgerBtn.style.display = 'block';
+      else burgerBtn.style.display = 'none';
+    })
+
+    burgerBtn.addEventListener('click', () => {
+      burgerMenu.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.burger-menu')) burgerMenu.classList.remove('active');
+    })
+  })();
+
   // Кнопка "заказать звонок"
   (() => {
     const phoneBtn = document.querySelector('.header__contact-button');
@@ -16,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.addEventListener('click', (e) => {
-      if (e.target !== headerPhone && e.target !== phoneBtn) headerPhone.classList.remove('active');
+      if (!e.target.closest('.header__contact-button-wrapper') && e.target !== phoneBtn) headerPhone.classList.remove('active');
     })
   })();
 
@@ -269,7 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Модальные окна для примеров работ
   (() => {
-    const images = document.querySelectorAll('.examples-slider__slide img');
+    const images = document.querySelectorAll('.examples-slider__slide img, .landing-slide__img');
     const modalWrapper = document.querySelector('.modal-wrapper');
     if (!modalWrapper) return;
     const exampleModal = modalWrapper.querySelector('.modal_example');
@@ -290,11 +311,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     modalWrapper.addEventListener('click', (e) => {
-      if (e.target !== modalWrapper) return;
+      console.log();
+      if (e.target !== exampleModal && e.target !== modalWrapper) return;
       exampleModal.innerHTML = '';
       document.querySelector('.hidden').classList.remove('hidden');
       closeModal();
-    }, true);
+    });
 
     images.forEach(img => {
       img.addEventListener('click', () => {
@@ -323,16 +345,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const swiperOurWorkMobile = new Swiper('.swiper-our-work-mobile', {
     effect: 'creative',
-      creativeEffect: {
-        prev: {
-          translate: [0, 0, -500],
-          opacity: 0
-        },
-        next: {
-          opacity: 1,
-          translate: ['200%', 0, 10]
-        }
+    loop: true,
+    creativeEffect: {
+      prev: {
+        translate: [0, 0, -500],
+        opacity: 0
+      },
+      next: {
+        opacity: 1,
+        translate: ['200%', 0, 10]
       }
+    }
   });
 
   const swiperPricingMobile= new Swiper('.swiper-pricing-mobile', {
@@ -352,16 +375,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const swiperSeoMobile = new Swiper('.swiper-seo-mobile-slider', {
     effect: 'creative',
-      creativeEffect: {
-        prev: {
-          translate: [0, 0, -500],
-          opacity: 0
-        },
-        next: {
-          opacity: 1,
-          translate: ['200%', 0, 10]
-        }
+    loop: true,
+    creativeEffect: {
+      prev: {
+        translate: [0, 0, -500],
+        opacity: 0
+      },
+      next: {
+        opacity: 1,
+        translate: ['200%', 0, 10]
       }
+    }
+  });
+
+  const swiperExamplesLandingsMobile= new Swiper('.swiper-landings', {
+    effect: 'coverflow',
+    slideToClickedSlide: true,
+    centeredSlides: true,
+		slidesPerView: 1,
+    initialSlide: 1,
+    spaceBetween: -50,
+    coverflow: {
+			stretch: 50,
+			depth: 500,
+      rotate: 0,
+			modifier: 1.5,
+			slideShadows : true,
+		}
+  });
+
+  const swiperExamplesBigMobild = new Swiper('.swiper-examples-big', {
+    loop: true,
+    spaceBetween: 50,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
   });
 
   // Отправка форм
